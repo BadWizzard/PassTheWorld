@@ -1,0 +1,26 @@
+<html>
+
+    <body>
+        {% if name %}
+        <h1>Hello {{ name }}!</h1>
+        {% else %}
+        <h1>Hello world!</h1>
+        {% endif %}
+
+        <form method="post" action="/main/rooms/create">
+            <button type="submit">Create Room</button>
+        </form>
+        {% if rooms %}
+        <br>
+        <ul>
+            {% for room in rooms %}
+            <li>
+                {{room.id}}
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+    </body>
+
+</html>

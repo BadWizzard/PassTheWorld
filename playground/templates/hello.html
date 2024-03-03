@@ -1,0 +1,105 @@
+<html>
+
+    <body>
+        {% if name %}
+        <h1>Hello {{ name }}!</h1>
+        {% else %}
+        <h1>Hello world!</h1>
+        {% endif %}
+        {% if customers %}
+        <br>
+        <ul>
+            {% for customer in customers %}
+            <li>
+                {{customer.first_name}} {{customer.last_name}} {{customer.email}}
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% if collections %}
+        <br>
+        <ul>
+            {% for collection in collections %}
+            <li>
+                {{collection.title}} {{collection.featured_product_id}}
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% if products %}
+        <br>
+        <ul>
+            {% for product in products %}
+            <li>
+                {{product.title}} {{product.orderitem.id}}
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% if order_count %}
+        <br>
+        {{ order_count }}
+        {% endif %}
+        {% if sold_products_count %}
+        <br>
+        {{ sold_products_count }}
+        {% endif %}
+        {% if customer_orders_count %}
+        <br>
+        {{ customer_orders_count }}
+        {% endif %}
+
+        {% if products_in_collection %}
+        <br>
+        {{ products_in_collection }}
+        {% endif %}
+        {% if customer_orders %}
+        <br>
+        customer_orders
+        <ul>
+            {% for customer_order in customer_orders %}
+            <li>
+                {{customer_order.email}} - {{customer_order.last_order_id}} - {{customer_order.expenses}}
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% if collection_products_counts %}
+        <br>
+        collection_products_counts
+        <ul>
+            {% for collection_products_count in collection_products_counts %}
+            <li>
+                {{collection_products_count.title}} - {{collection_products_count.products_count}}
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% if customers_5_more_orders %}
+        <br>
+        customers_5_more_orders
+        <ul>
+            {% for customers_5_more_order in customers_5_more_orders %}
+            <li>
+                {{customers_5_more_order.email}} - {{customers_5_more_order.order_count}}
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        {% if top_5_bestsellers %}
+        <br>
+        top_5_bestsellers
+        <ul>
+            {% for top_5_bestseller in top_5_bestsellers %}
+            <li>
+                {{top_5_bestseller.title}} - {{top_5_bestseller.sell_count}}
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+
+    </body>
+
+</html>
